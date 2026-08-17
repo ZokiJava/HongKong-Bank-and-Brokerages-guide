@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +19,9 @@
             --border-color: #eee;
             --code-text: #2f3542;
             --code-border: #a4b0be;
-            --shadow: rgba(0,0,0,0.05);
+            --shadow: rgba(0, 0, 0, 0.05);
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
@@ -29,6 +31,7 @@
             padding: 0;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         body[data-theme="dark"] {
             --primary-color: #e7edf7;
             --accent-color: #5dade2;
@@ -42,27 +45,32 @@
             --border-color: #2d3d4f;
             --code-text: #edf3f8;
             --code-border: #52657a;
-            --shadow: rgba(0,0,0,0.35);
+            --shadow: rgba(0, 0, 0, 0.35);
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
+
         header {
             text-align: center;
             margin-bottom: 50px;
         }
+
         h1 {
             color: var(--primary-color);
             font-size: 2.2em;
             margin-bottom: 10px;
         }
+
         .subtitle {
             color: var(--text-light);
             font-size: 1.1em;
             margin-bottom: 20px;
         }
+
         .download-btn {
             display: inline-flex;
             align-items: center;
@@ -76,19 +84,22 @@
             font-size: 0.95em;
             transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2);
-            cursor: pointer; 
+            cursor: pointer;
         }
+
         .download-btn:hover {
             background: #219150;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
         }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
+
         .card {
             background: var(--card-bg);
             border-radius: 12px;
@@ -99,10 +110,12 @@
             display: flex;
             flex-direction: column;
         }
+
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px var(--shadow);
         }
+
         .card h2 {
             color: var(--primary-color);
             margin-top: 0;
@@ -110,6 +123,7 @@
             padding-bottom: 12px;
             font-size: 1.4em;
         }
+
         .tag {
             display: inline-block;
             background: var(--tag-bg);
@@ -121,12 +135,14 @@
             margin: 0 8px 15px 0;
             align-self: flex-start;
         }
+
         .tags {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             margin-bottom: 10px;
         }
+
         .section-title {
             font-weight: 600;
             color: #444;
@@ -134,25 +150,30 @@
             margin-bottom: 8px;
             font-size: 0.95em;
         }
+
         ul {
             margin: 0;
             padding-left: 20px;
             color: var(--text-light);
             font-size: 0.95em;
         }
+
         ul li {
             margin-bottom: 6px;
         }
+
         .highlight {
             color: #e74c3c;
             font-weight: 600;
         }
+
         .code-row {
             display: flex;
             align-items: center;
             gap: 10px;
             margin: 15px 0;
         }
+
         .code-box {
             flex: 1;
             background: var(--muted-bg);
@@ -166,6 +187,7 @@
             border-radius: 8px;
             margin: 0;
         }
+
         .copy-btn {
             min-width: 62px;
             border: none;
@@ -179,13 +201,16 @@
             transition: background 0.2s ease, transform 0.2s ease;
             white-space: nowrap;
         }
+
         .copy-btn:hover {
             background: #27ae60;
             transform: translateY(-1px);
         }
+
         .copy-btn.copied {
             background: #1abc9c;
         }
+
         .btn {
             display: block;
             text-align: center;
@@ -198,9 +223,11 @@
             margin-top: auto;
             transition: opacity 0.3s ease;
         }
+
         .btn:hover {
             opacity: 0.9;
         }
+
         .theme-toggle {
             position: fixed;
             top: 18px;
@@ -220,9 +247,11 @@
             transition: all 0.2s ease;
             box-shadow: 0 2px 8px var(--shadow);
         }
+
         .theme-toggle:hover {
             transform: translateY(-1px);
         }
+
         .contact-section {
             margin-top: 50px;
             background: var(--card-bg);
@@ -232,11 +261,12 @@
             box-shadow: 0 4px 15px var(--shadow);
             border-top: 5px solid #2c3e50;
         }
+
         .contact-section h3 {
             color: var(--primary-color);
             margin-top: 0;
         }
-        
+
         /* 联系按钮组合布局 */
         .contact-buttons {
             display: flex;
@@ -245,7 +275,7 @@
             flex-wrap: wrap;
             margin-top: 20px;
         }
-        
+
         .contact-btn {
             display: inline-flex;
             align-items: center;
@@ -262,37 +292,95 @@
             border: none;
             font-family: inherit;
         }
+
         .contact-btn:hover {
             background: #2284b5;
             transform: translateY(-2px);
         }
-        
+
         /* 微信按钮专属样式 */
         .contact-btn.wechat {
             background: #07c160;
         }
+
         .contact-btn.wechat:hover {
             background: #06ad56;
         }
 
+        .floating-hahasim {
+            position: fixed;
+            right: 22px;
+            bottom: 24px;
+            z-index: 1200;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 100%);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            box-shadow: 0 14px 28px rgba(14, 165, 233, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .floating-hahasim:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(14, 165, 233, 0.42);
+        }
+
+        .floating-hahasim .floating-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.18);
+            font-size: 1rem;
+        }
+
         @media (max-width: 600px) {
-            h1 { font-size: 1.8em; }
-            .grid { grid-template-columns: 1fr; }
-            .contact-buttons { flex-direction: column; align-items: center; }
-            .contact-btn { width: 100%; max-width: 280px; }
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .floating-hahasim {
+                right: 14px;
+                bottom: 16px;
+                padding: 10px 14px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑暗模式">🌙 深色模式</button>
         <header>
             <h1>精选海外券商与香港银行开户指南</h1>
             <p class="subtitle">汇集优质海外资产配置渠道、专属邀请码与开户奖励</p>
-            
+
             <a onclick="forceDownload('./盈立复星众安平安开户指南.pdf', '盈立复星众安平安开户指南.pdf')" class="download-btn">
                 <svg style="width:18px;height:18px;margin-right:6px;" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    <path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
                 </svg>
                 下载指南文档 (PDF)
             </a>
@@ -321,7 +409,8 @@
                     <div class="code-box" data-code="960j">960j</div>
                     <button class="copy-btn" type="button" data-code="960j">复制</button>
                 </div>
-                <a href="https://m.usmartsg66.com/promo/overseas/bonus-dec.html?ICode=960j&langType=1&Id=" target="_blank" class="btn" style="background: #ff7043;">立即注册开户→</a>
+                <a href="https://m.usmartsg66.com/promo/overseas/bonus-dec.html?ICode=960j&langType=1&Id="
+                    target="_blank" class="btn" style="background: #ff7043;">立即注册开户→</a>
             </div>
 
             <div class="card" style="border-top-color: #c0ca33;">
@@ -338,7 +427,8 @@
                 <div class="section-title">🎁 开户福利：</div>
                 <ul>
                     <li>首次入金 ≥ 10,000港币：<span class="highlight">可返 100 HKD</span>。
-                    <br>并享受一世免佣与实时行情</br></li>
+                        <br>并享受一世免佣与实时行情</br>
+                    </li>
                     <li>返现福利无需交易，港卡出金免费</li>
                 </ul>
                 <div class="section-title">🔑 专属邀请码：</div>
@@ -346,7 +436,8 @@
                     <div class="code-box" data-code="UBETQ9">UBETQ9</div>
                     <button class="copy-btn" type="button" data-code="UBETQ9">复制</button>
                 </div>
-                <a href="https://h5.fotechwealth.com/pages/startAccount.html?channel=040003&aeCode=B2&invitationCode=UBETQ9&langType=zhCn" target="_blank" class="btn" style="background: #c0ca33;">立即注册开户→</a>
+                <a href="https://h5.fotechwealth.com/pages/startAccount.html?channel=040003&aeCode=B2&invitationCode=UBETQ9&langType=zhCn"
+                    target="_blank" class="btn" style="background: #c0ca33;">立即注册开户→</a>
             </div>
 
             <div class="card" style="border-top-color: #26a69a;">
@@ -364,7 +455,8 @@
                 <ul>
                     <li>持有 10,000港币等值港股或美股过夜：<span class="highlight">返 300 HKD</span>。</li>
                     <li>填邀请码可额外获 <span class="highlight">30刀 + 660+ HKD</span> 奖励。</li>
-                    <li><a href="https://l.za.group/qFE47" target="_blank" style="color:#26a69a; text-decoration:none;">查看具体奖励说明 &rarr;</a></li>
+                    <li><a href="https://l.za.group/qFE47" target="_blank"
+                            style="color:#26a69a; text-decoration:none;">查看具体奖励说明 &rarr;</a></li>
                 </ul>
                 <div class="section-title">🔑 专属邀请码：</div>
                 <div class="code-row">
@@ -400,26 +492,34 @@
         <div class="contact-section">
             <h3>📞 更多服务与业务咨询</h3>
             <p style="color: #666;">如需办理 <strong>香港电话卡（CSL / hahasim）</strong> 或有任何开户疑问，欢迎通过下方方式联系我：</p>
-            
+
             <div class="contact-buttons">
                 <!-- 原有的 Telegram 按钮 -->
                 <a href="https://t.me/KirinChew" target="_blank" class="contact-btn">
                     <svg style="width:18px;height:18px;vertical-align:text-bottom;margin-right:5px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.9 1.21-5.36 3.55-.5.35-.96.52-1.38.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.41-1.4-.87.03-.24.36-.48.98-.74 3.86-1.68 6.43-2.79 7.72-3.32 3.67-1.52 4.43-1.78 4.93-1.79.11 0 .36.03.49.15.11.1.15.23.16.34.01.07 0 .15-.01.21z"/>
+                        <path fill="currentColor"
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.11.03-1.9 1.21-5.36 3.55-.5.35-.96.52-1.38.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.41-1.4-.87.03-.24.36-.48.98-.74 3.86-1.68 6.43-2.79 7.72-3.32 3.67-1.52 4.43-1.78 4.93-1.79.11 0 .36.03.49.15.11.1.15.23.16.34.01.07 0 .15-.01.21z" />
                     </svg>
                     Telegram 联系我
                 </a>
-                
+
                 <!-- 新增的 微信 按钮 -->
                 <button onclick="copyWeChat(this)" class="contact-btn wechat">
                     <svg style="width:18px;height:18px;margin-right:5px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M8.5,13.5C7.67,13.5 7,12.83 7,12C7,11.17 7.67,10.5 8.5,10.5C9.33,10.5 10,11.17 10,12C10,12.83 9.33,13.5 8.5,13.5M15.5,13.5C14.67,13.5 14,12.83 14,12C14,11.17 14.67,10.5 15.5,10.5C16.33,10.5 17,11.17 17,12C17,12.83 16.33,13.5 15.5,13.5M12,4.5C7.3,4.5 3.5,7.7 3.5,11.5C3.5,13.8 5,15.8 7.1,17L6.5,19.5L9.3,18.1C10.1,18.3 11,18.5 12,18.5C16.7,18.5 20.5,15.3 20.5,11.5C20.5,7.7 16.7,4.5 12,4.5Z"/>
+                        <path fill="currentColor"
+                            d="M8.5,13.5C7.67,13.5 7,12.83 7,12C7,11.17 7.67,10.5 8.5,10.5C9.33,10.5 10,11.17 10,12C10,12.83 9.33,13.5 8.5,13.5M15.5,13.5C14.67,13.5 14,12.83 14,12C14,11.17 14.67,10.5 15.5,10.5C16.33,10.5 17,11.17 17,12C17,12.83 16.33,13.5 15.5,13.5M12,4.5C7.3,4.5 3.5,7.7 3.5,11.5C3.5,13.8 5,15.8 7.1,17L6.5,19.5L9.3,18.1C10.1,18.3 11,18.5 12,18.5C16.7,18.5 20.5,15.3 20.5,11.5C20.5,7.7 16.7,4.5 12,4.5Z" />
                     </svg>
                     <span>微信: KirinZhou711</span>
                 </button>
             </div>
         </div>
     </div>
+
+    <a class="floating-hahasim" href="./hahasim.html" target="_blank" rel="noopener noreferrer"
+        aria-label="打开 hahaSIM 介绍页">
+
+        <span>hahaSIM</span><span class="floating-icon">➡️</span>
+    </a>
 
     <!-- 脚本区 -->
     <script>
@@ -440,11 +540,11 @@
             applyTheme(initialTheme);
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             initTheme();
             const toggleBtn = document.getElementById('themeToggle');
             if (toggleBtn) {
-                toggleBtn.addEventListener('click', function() {
+                toggleBtn.addEventListener('click', function () {
                     const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
                     applyTheme(nextTheme);
                 });
@@ -456,7 +556,7 @@
             const btn = document.querySelector('.download-btn');
             const originalHTML = btn.innerHTML;
             btn.innerHTML = '下载中...';
-            btn.style.pointerEvents = 'none'; 
+            btn.style.pointerEvents = 'none';
 
             fetch(url)
                 .then(response => {
@@ -468,13 +568,13 @@
                     const a = document.createElement('a');
                     a.style.display = 'none';
                     a.href = blobUrl;
-                    a.download = fileName; 
+                    a.download = fileName;
                     document.body.appendChild(a);
-                    a.click(); 
-                    
+                    a.click();
+
                     window.URL.revokeObjectURL(blobUrl);
                     document.body.removeChild(a);
-                    
+
                     btn.innerHTML = originalHTML;
                     btn.style.pointerEvents = 'auto';
                 })
@@ -529,8 +629,8 @@
             document.body.removeChild(textArea);
         }
 
-        document.querySelectorAll('.copy-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
+        document.querySelectorAll('.copy-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
                 const code = this.dataset.code || this.closest('.code-row').querySelector('.code-box').textContent.trim();
                 copyCodeToClipboard(code, this);
             });
@@ -539,7 +639,7 @@
         // 微信一键复制微信号脚本
         function copyWeChat(btn) {
             const wechatId = "KirinZhou711";
-            
+
             // 尝试使用 Clipboard API 进行复制
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(wechatId).then(() => {
@@ -563,4 +663,5 @@
         }
     </script>
 </body>
+
 </html>

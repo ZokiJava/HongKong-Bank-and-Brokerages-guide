@@ -5,7 +5,7 @@
 			<div class="adt">By
 				<span class="vcard author">
 					<span class="fn">
-						<a href="#" title="由admin发布" rel="author">admin</a></span>
+						<a href="#" title="由Kirin发布" rel="author">Kirin</a></span>
 				</span>
 				<span class="meta-sep">|</span>
 				<span class="date updated">2026-05-02</span>
@@ -109,6 +109,18 @@
 				text-decoration: underline;
 			}
 
+			.entry-content .key-point {
+				display: inline-block;
+				padding: 0.12em 0.5em;
+				margin: 0 0.08em;
+				background: linear-gradient(135deg, #fff3b0 0%, #fde68a 100%);
+				border: 1px solid rgba(245, 158, 11, 0.35);
+				border-radius: 0.5em;
+				color: #7c2d12;
+				font-weight: 700;
+				box-shadow: 0 4px 10px rgba(245, 158, 11, 0.12);
+			}
+
 			.entry-content table {
 				border-collapse: collapse;
 				max-width: 100%;
@@ -181,9 +193,72 @@
 			.entry-content .rounded-lg {
 				border-radius: .5rem
 			}
+
+			.floating-bar {
+				position: fixed;
+				right: 22px;
+				bottom: 24px;
+				z-index: 2000;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.float-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				padding: 12px 18px;
+				border-radius: 999px;
+				color: #fff;
+				text-decoration: none;
+				font-size: 0.92rem;
+				font-weight: 700;
+				box-shadow: 0 14px 30px rgba(37, 99, 235, 0.32);
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+
+			.float-btn:hover {
+				transform: translateY(-2px) scale(1.02);
+			}
+
+			.float-btn .icon {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 28px;
+				height: 28px;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, 0.18);
+				font-size: 1rem;
+			}
+
+			.float-btn.home {
+				background: linear-gradient(135deg, #5472b7 0%, #2563eb 100%);
+			}
+
+			.float-btn.telegram {
+				background: linear-gradient(135deg, #2a9df4 0%, #0b74d8 100%);
+			}
+
+			.float-btn.wechat {
+				background: linear-gradient(135deg, #17bf63 0%, #0ea95c 100%);
+			}
+
+			@media (max-width: 600px) {
+				.floating-bar {
+					right: 14px;
+					bottom: 16px;
+					gap: 8px;
+				}
+				.float-btn {
+					padding: 10px 14px;
+					font-size: 0.8rem;
+				}
+			}
 		</style>
 		<h3><strong>一、套餐介绍</strong></h3>
-		<p>💡 <strong>产品亮点：</strong><br> 综合无短板，保号费用低；在香港以外地区使用无需实名也可收短信。</p>
+		<p class="key-point">💡 <strong>产品亮点：</strong><br> 综合无短板，保号费用低；在香港以外地区使用无需实名也可收短信。</p>
 		<p>🔧 <strong>套餐详情：</strong></p>
 		<ul>
 			<li>
@@ -249,6 +324,7 @@
 			</li>
 		</ul>
 		<p>📝 <strong>实名登记要求：</strong><br> 购买包含香港本地流量的套餐需进行实名登记。</p>
+		<p class="key-point">📝 <strong>关于接收短信：</strong><br> 未实名用户可以漫游上网、接打电话以及发送短信但无法接收短信，解决方式是实名或者开通中国1日漫游流量包</p>
 		<p></p>
 		<h3><strong>二、激活教程</strong></h3>
 		<ol>
@@ -357,4 +433,50 @@
 		
 	</footer>
 	<!-- .entry-meta -->
+	<div class="floating-bar" style="display: flex; flex-direction: column; gap: 10px;align-items: flex-start;">
+		<a class="float-btn home" href="./index.html" aria-label="返回首页">
+			<span class="icon">🏠</span>
+			<span>返回首页</span>
+		</a>
+		<a class="float-btn telegram" href="https://t.me/KirinChew" target="_blank" rel="noopener noreferrer" aria-label="联系 Telegram">
+			<span class="icon">✈️</span>
+			<span>Telegram</span>
+		</a>
+		<a class="float-btn wechat" href="javascript:void(0)" aria-label="复制微信号" onclick="copyWeChatFloat()">
+			<span class="icon">💬</span>
+			<span style="font-size: 0.65rem;">微信KirinZhou711</span>
+		</a>
+	</div>
+
+	<script>
+		function copyWeChatFloat() {
+			const wechatId = 'KirinZhou711';
+			if (navigator.clipboard && window.isSecureContext) {
+				navigator.clipboard.writeText(wechatId).then(function() {
+					alert('微信号已复制：' + wechatId);
+				}).catch(function() {
+					fallbackCopyWeChat(wechatId);
+				});
+			} else {
+				fallbackCopyWeChat(wechatId);
+			}
+		}
+
+		function fallbackCopyWeChat(text) {
+			var textarea = document.createElement('textarea');
+			textarea.value = text;
+			textarea.style.position = 'fixed';
+			textarea.style.opacity = '0';
+			document.body.appendChild(textarea);
+			textarea.focus();
+			textarea.select();
+			try {
+				document.execCommand('copy');
+				alert('微信号已复制：' + text);
+			} catch (err) {
+				alert('复制失败，请手动复制微信号：' + text);
+			}
+			document.body.removeChild(textarea);
+		}
+	</script>
 </article>
