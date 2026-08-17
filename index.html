@@ -307,17 +307,23 @@
             background: #06ad56;
         }
 
-        .floating-hahasim {
+        .floating-stack {
             position: fixed;
             right: 22px;
             bottom: 24px;
             z-index: 1200;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .floating-stack .floating-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 12px 18px;
             border-radius: 999px;
-            background: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 100%);
             color: #fff;
             text-decoration: none;
             font-size: 0.95rem;
@@ -326,12 +332,21 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .floating-hahasim:hover {
+        .floating-stack .floating-link:hover {
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 16px 32px rgba(14, 165, 233, 0.42);
+            text-decoration: none;
         }
 
-        .floating-hahasim .floating-icon {
+        .floating-link.hahasim {
+            background: linear-gradient(135deg, #1d4ed8 0%, #0ea5e9 100%);
+        }
+
+        .floating-link.csl {
+            background: linear-gradient(135deg, #dab917 0%, #e77b22 100%);
+        }
+
+        .floating-link .floating-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -361,9 +376,14 @@
                 max-width: 280px;
             }
 
-            .floating-hahasim {
+            .floating-stack {
+                align-items: flex-start;
                 right: 14px;
                 bottom: 16px;
+                gap: 8px;
+            }
+
+            .floating-link {
                 padding: 10px 14px;
                 font-size: 0.85rem;
             }
@@ -515,12 +535,16 @@
             </div>
         </div>
     </div>
-
-    <a class="floating-hahasim" href="./hahasim.html" target="_blank" rel="noopener noreferrer"
-        aria-label="打开 hahaSIM 介绍页">
-
-        <span>hahaSIM</span><span class="floating-icon">➡️</span>
-    </a>
+    <div class="floating-stack">
+        <a class="floating-link hahasim" href="./hahasim.html" target="_blank" rel="noopener noreferrer"
+            aria-label="打开 hahaSIM 介绍页">
+            <span>hahaSIM</span><span class="floating-icon">➡️</span>
+        </a>
+        <a class="floating-link csl" href="./cslsim.html" target="_blank" rel="noopener noreferrer"
+            aria-label="打开 CSL-SIM 介绍页">
+            <span>CSL SIM</span><span class="floating-icon">➡️</span>
+        </a>
+    </div>
 
     <!-- 脚本区 -->
     <script>
