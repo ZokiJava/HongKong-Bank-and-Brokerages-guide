@@ -21,6 +21,8 @@
 				</span>
 				<span class="meta-sep">|</span>
 				<span class="date updated">2026-08-17</span>
+				<span class="meta-sep">|</span>
+				<span class="contact-info">联系方式qq 3543461726</span>
 			</div>
 		</div>
 		<!-- below title meta end -->
@@ -241,23 +243,23 @@
 			<span class="icon">✈️</span>
 			<span>Telegram</span>
 		</a>
-		<a class="float-btn wechat" href="javascript:void(0)" aria-label="复制微信号" onclick="copyWeChatFloat()">
+		<a class="float-btn wechat" href="javascript:void(0)" aria-label="复制QQ号" onclick="copyWeChatFloat()">
 			<span class="icon">💬</span>
-			<span style="font-size: 0.65rem;">微信KirinZhou711</span>
+			<span style="font-size: 0.65rem;">QQ3543461726</span>
 		</a>
 	</div>
 
 	<script>
 		function copyWeChatFloat() {
-			const wechatId = 'KirinZhou711';
+			const qqId = '3543461726';
 			if (navigator.clipboard && window.isSecureContext) {
-				navigator.clipboard.writeText(wechatId).then(function () {
-					alert('微信号已复制：' + wechatId);
+				navigator.clipboard.writeText(qqId).then(function () {
+					alert('QQ号已复制：' + qqId);
 				}).catch(function () {
-					fallbackCopyWeChat(wechatId);
+					fallbackCopyWeChat(qqId);
 				});
 			} else {
-				fallbackCopyWeChat(wechatId);
+				fallbackCopyWeChat(qqId);
 			}
 		}
 
@@ -271,9 +273,9 @@
 			textarea.select();
 			try {
 				document.execCommand('copy');
-				alert('微信号已复制：' + text);
+				alert('QQ号已复制：' + text);
 			} catch (err) {
-				alert('复制失败，请手动复制微信号：' + text);
+				alert('复制失败，请手动复制QQ号：' + text);
 			}
 			document.body.removeChild(textarea);
 		}

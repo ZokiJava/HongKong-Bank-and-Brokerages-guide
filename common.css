@@ -230,7 +230,12 @@
 }
 
 .float-btn.wechat {
-	background: linear-gradient(135deg, #17bf63 0%, #0ea95c 100%);
+	background: linear-gradient(135deg, #ff5b67 0%, #d7242f 100%);
+	box-shadow: 0 14px 30px rgba(215, 36, 47, 0.32);
+}
+
+.float-btn.wechat .icon {
+	background: rgba(255, 255, 255, 0.18);
 }
 
 @media (max-width: 600px) {
