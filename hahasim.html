@@ -222,12 +222,25 @@
 			<li>
 				<p><strong>实名认证教程：</strong><a target="_blank" rel="noopener noreferrer nofollow"
 						class="text-primary underline"
-						href="https://web.three.com.hk/prepaid/realnameregistration/index.html">https://web.three.com.hk/prepaid/realnameregistration/index.html</a><br>
+						href="https://web.three.com.hk/prepaid/realnameregistration/index.html">https://web.three.com.hk/prepaid/<br>realnameregistration/index.html</a><br>
 				</p>
 			</li>
 
 		</ol>
 		<p class="key-point"><strong>获取方式：添加右侧联系方式，全国包邮</strong></p>
+		<h3 id="part5"><strong>五、常见问题</strong></h3>
+		<ol>
+			<li>
+				<p><strong>如果无法登录app</strong></p>
+				<p style="display: flex;"><img src="assets/h3.jpg"
+					style="height: 800px;" alt=""><img src="assets/h4.jpg"
+					style="height: 800px;" alt="">
+				<img src="assets/h5.jpg"
+					style="height: 800px;" alt=""></p>
+			</p>
+			</li>
+			
+		</ol>
 	</div>
 	<!-- .entry-content -->
 	<footer class="entry-meta">
@@ -254,13 +267,13 @@
 		function copyWeChatFloat() {
 			const wechatId = 'KirinChew';
 			if (navigator.clipboard && window.isSecureContext) {
-				navigator.clipboard.writeText(qqId).then(function () {
-					alert('QQ号已复制：' + qqId);
+				navigator.clipboard.writeText(wechatId).then(function () {
+					alert('微信ID已复制：' + wechatId);
 				}).catch(function () {
-					fallbackCopyWeChat(qqId);
+					fallbackCopyWeChat(wechatId);
 				});
 			} else {
-				fallbackCopyWeChat(qqId);
+				fallbackCopyWeChat(wechatId);
 			}
 		}
 
@@ -274,9 +287,9 @@
 			textarea.select();
 			try {
 				document.execCommand('copy');
-				alert('QQ号已复制：' + text);
+				alert('微信ID已复制：' + text);
 			} catch (err) {
-				alert('复制失败，请手动复制QQ号：' + text);
+				alert('复制失败，请手动复制微信ID：' + text);
 			}
 			document.body.removeChild(textarea);
 		}

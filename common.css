@@ -180,6 +180,39 @@
 	border-radius: .5rem
 }
 
+.entry-content p[style*="display: flex"] {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: flex-start;
+}
+
+.entry-content p[style*="display: flex"] img {
+	flex: 1 1 220px;
+	max-width: 100%;
+	height: auto !important;
+	width: auto;
+	object-fit: contain;
+	margin: 0.8rem 0;
+}
+
+.entry-content img[style*="height"] {
+	max-width: 100% !important;
+	width: auto;
+	height: auto !important;
+	object-fit: contain;
+}
+
+/* ---------- 桌面端：教程截图限高 ---------- */
+@media (min-width: 601px) {
+	.entry-content img[style*="height"],
+	.entry-content p[style*="display: flex"] img {
+		max-height: 560px;
+		height: auto !important;
+		margin: 0.8rem auto;
+	}
+}
+
 /* ---------- 悬浮操作栏（floating-bar） ---------- */
 .floating-bar {
 	position: fixed;
@@ -239,6 +272,28 @@
 }
 
 @media (max-width: 600px) {
+	.entry-content {
+		padding: 20px 14px;
+	}
+
+	.entry-content h3 {
+		font-size: 1.35rem;
+		padding: 0.7rem 0.8rem;
+	}
+
+	.entry-content p[style*="display: flex"] {
+		display: block;
+	}
+
+	.entry-content p[style*="display: flex"] img,
+	.entry-content img[style*="height"] {
+		display: block;
+		width: 100% !important;
+		max-width: 100% !important;
+		height: auto !important;
+		margin: 0.75rem auto;
+	}
+
 	.floating-bar {
 		right: 14px;
 		bottom: 16px;
