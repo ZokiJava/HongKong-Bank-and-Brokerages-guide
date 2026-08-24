@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -233,9 +233,11 @@
 	<!-- .entry-content -->
 
 	<footer class="entry-meta">
+		⚠️免责声明：本介绍仅供参考，具体资费与条款以官方公告为准。所有数据优惠均以卡片有效期内使用为限。
 	</footer>
 	<!-- .entry-meta -->
-	<div class="floating-bar" style="display: flex; flex-direction: column; gap: 10px;align-items: flex-start;">
+	<div class="floating-bar">
+		<input type="checkbox" id="nav-toggle" class="nav-toggle-check" aria-hidden="true">
 		<a class="float-btn home" href="./index.html" aria-label="返回首页">
 			<span class="icon">🏠</span>
 			<span>返回首页</span>
@@ -245,22 +247,26 @@
 			<span class="icon">✈️</span>
 			<span>Telegram</span>
 		</a>
-		<a class="float-btn wechat" href="javascript:void(0)" aria-label="复制QQ号" onclick="copyWeChatFloat()">
+		<a class="float-btn wechat" href="javascript:void(0)" aria-label="复制微信号" onclick="copyWeChatFloat()">
 			<span class="icon">💬</span>
 			<span style="font-size: 0.65rem;">微信KirinChew</span>
 		</a>
+		<label for="nav-toggle" class="nav-toggle-btn">
+			<span class="icon">💬</span>
+			<span>联系</span>
+		</label>
 	</div>
 	<script>
 		function copyWeChatFloat() {
 			const wechatId = 'KirinChew';
 			if (navigator.clipboard && window.isSecureContext) {
-				navigator.clipboard.writeText(qqId).then(function () {
-					alert('QQ号已复制：' + qqId);
+				navigator.clipboard.writeText(wechatId).then(function () {
+					alert('微信ID已复制：' + wechatId);
 				}).catch(function () {
-					fallbackCopyWeChat(qqId);
+					fallbackCopyWeChat(wechatId);
 				});
 			} else {
-				fallbackCopyWeChat(qqId);
+				fallbackCopyWeChat(wechatId);
 			}
 		}
 
@@ -274,9 +280,9 @@
 			textarea.select();
 			try {
 				document.execCommand('copy');
-				alert('QQ号已复制：' + text);
+				alert('微信ID已复制：' + text);
 			} catch (err) {
-				alert('复制失败，请手动复制QQ号：' + text);
+				alert('复制失败，请手动复制微信ID：' + text);
 			}
 			document.body.removeChild(textarea);
 		}

@@ -211,6 +211,11 @@
 		height: auto !important;
 		margin: 0.8rem auto;
 	}
+
+	/* 桌面端隐藏收起/展开触发按钮（仅在移动端出现） */
+	.floating-bar .nav-toggle-btn {
+		display: none;
+	}
 }
 
 /* ---------- 悬浮操作栏（floating-bar） ---------- */
@@ -220,8 +225,13 @@
 	bottom: 24px;
 	z-index: 2000;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
 	gap: 10px;
+}
+
+.floating-bar .nav-toggle-check {
+	display: none;
 }
 
 .floating-bar .float-btn {
@@ -294,13 +304,55 @@
 		margin: 0.75rem auto;
 	}
 
+	/* ---------- 移动端：悬浮栏自动收起为单个按钮，避免遮挡内容 ---------- */
 	.floating-bar {
 		right: 14px;
 		bottom: 16px;
 		gap: 8px;
 	}
 
-	.float-btn {
+	/* 收起状态：隐藏原有链接按钮，只显示一个触发按钮 */
+	.floating-bar .float-btn {
+		display: none;
+	}
+
+	.floating-bar .nav-toggle-check {
+		display: none;
+	}
+
+	.floating-bar .nav-toggle-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 11px 15px;
+		border-radius: 999px;
+		color: #fff;
+		font-size: 0.85rem;
+		font-weight: 700;
+		background: linear-gradient(135deg, #30b839 0%, #48cc27 100%);
+		box-shadow: 0 14px 30px rgba(39, 36, 47, 0.32);
+		cursor: pointer;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.floating-bar .nav-toggle-btn .icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.18);
+		font-size: 0.9rem;
+	}
+
+	.floating-bar .nav-toggle-btn:active {
+		transform: scale(0.97);
+	}
+
+	/* 点击触发按钮后，展开显示完整链接按钮 */
+	.floating-bar .nav-toggle-check:checked ~ .float-btn {
+		display: inline-flex;
 		padding: 10px 14px;
 		font-size: 0.8rem;
 	}
