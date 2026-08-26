@@ -396,7 +396,7 @@
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑暗模式">🌙 深色模式</button>
         <header>
             <h1>精选海外券商与香港银行开户指南</h1>
-            <p class="subtitle">汇集优质海外资产配置渠道、专属邀请码与开户奖励</p>
+            <p class="subtitle">汇集优质海外资产配置渠道、专属邀请码与开户奖励。更新日期：<span id="updateDate">2026-08-26</span></p>
 
             <a onclick="forceDownload('./盈立复星众安平安开户指南.pdf', '盈立复星众安平安开户指南.pdf')" class="download-btn">
                 <svg style="width:18px;height:18px;margin-right:6px;" viewBox="0 0 24 24">
@@ -421,7 +421,7 @@
                 </ul>
                 <div class="section-title">🎁 开户福利：</div>
                 <ul>
-                    <li>首次入金 ≥ 2000刀：<span class="highlight">可返 150 RMB</span>。</li>
+                    <li>首次入金 ≥ 2000刀：<span class="highlight">可返 200 RMB</span>。</li>
                     <li>额外获取 0.02股$特斯拉及 36刀等奖励。</li>
                 </ul>
                 <div class="section-title">🔑 专属邀请码：</div>
@@ -565,6 +565,20 @@
             applyTheme(initialTheme);
         }
 
+        // 按 UTC+8 (中国标准时间) 计算今天的日期并写入页面
+        function updateUpdateDate() {
+            const now = new Date();
+            // 当前时间 + 8 小时得到 UTC+8 时区的绝对时间
+            const utc8 = new Date(now.getTime() + 8 * 60 * 60 * 1000);
+            const year = utc8.getUTCFullYear();
+            const month = String(utc8.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(utc8.getUTCDate()).padStart(2, '0');
+            const el = document.getElementById('updateDate');
+            if (el) {
+                el.textContent = year + '-' + month + '-' + day;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             initTheme();
             const toggleBtn = document.getElementById('themeToggle');
@@ -574,6 +588,10 @@
                     applyTheme(nextTheme);
                 });
             }
+
+            // 首次加载即更新日期，并每分钟刷新一次以应对跨天
+            updateUpdateDate();
+            setInterval(updateUpdateDate, 60 * 1000);
         });
 
         // PDF 强制下载脚本
