@@ -1,6 +1,6 @@
 /* ==========================================================
    common.css
-   从 cslsim.html / hahasim.html 中共用的样式提取而来。
+   从 cslsim.html / hahasim.html 共用的样式提取而来。
    仅供与 .entry-content 内容区 + .floating-bar 悬浮按钮使用。
    ========================================================== */
 
@@ -205,6 +205,7 @@
 
 /* ---------- 桌面端：教程截图限高 ---------- */
 @media (min-width: 601px) {
+
 	.entry-content img[style*="height"],
 	.entry-content p[style*="display: flex"] img {
 		max-height: 560px;
@@ -351,9 +352,18 @@
 	}
 
 	/* 点击触发按钮后，展开显示完整链接按钮 */
-	.floating-bar .nav-toggle-check:checked ~ .float-btn {
+	.floating-bar .nav-toggle-check:checked~.float-btn {
 		display: inline-flex;
 		padding: 10px 14px;
 		font-size: 0.8rem;
 	}
+
+}
+
+/* ---------- 页面 Logo 图标（全局生效，所有屏幕尺寸） ---------- */
+.logo {
+	width: 32px;
+	height: 32px;
+	margin-right: 12px;
+	vertical-align: middle;
 }
