@@ -5,18 +5,6 @@
  * 【使用说明】
  *   只需修改下方 REFERRAL_DATA 中各字段的值，
  *   首页卡片 / 常见问题 FAQ 会自动同步显示，无需再改 HTML。
- *
- * 【修改后需同步的地方】
- *   搜索引擎抓取的是原始 HTML，以下内容不会随 JS 自动更新，
- *   建议一并修改 index.html 中 <head> 部分的：
- *     1. <meta name="description" content="...">         中的金额
- *     2. <meta property="og:description" content="...">   中的金额
- *     3. JSON-LD (FAQPage / WebSite) <script> 中的金额
- *
- * 【当前各银行数据与 readme.md 存在不一致，请核实】
- *   盈立：index.html=300 RMB        readme.md=150 RMB
- *   平安：index.html=150 HKD        readme.md=200 HKD
- *   众安：页面官方链接 l.za.group/qFE47  readme=l.za.group/FuEIv
  * ==================================================================
  */
 (function () {
