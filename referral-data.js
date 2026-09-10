@@ -27,7 +27,7 @@
         /* ---------- 1. 盈立证券新加坡 (uSMART, SG) ---------- */
         usmart: {
             name: '盈立证券新加坡 (uSMART, SG)',
-            rebate: '300 RMB',                  // 首次入金 ≥ 2000 美元 返现
+            rebate: '300 HKD',                  // 首次入金 ≥ 2000 美元 返现
             extra: '额外获取 0.02股$特斯拉及 36刀等奖励',
             code: '960j',                        // 邀请码
             registerUrl: 'https://m.usmartsg66.com/promo/overseas/bonus-dec.html?ICode=960j&langType=1&Id='
@@ -36,7 +36,7 @@
         /* ---------- 2. 复星证券（星财富 / Fortune Wealth） ---------- */
         futu: {
             name: '复星证券（星财富）',
-            rebate: '100 HKD',                   // 首次入金 ≥ 10,000 HKD 返现
+            rebate: '300 HKD',                   // 首次入金 ≥ 10,000 HKD 返现
             extraExtra: '200 HKD',               // 留存 30 天额外返现
             maxRebate: '300 HKD',                // 最高合计返现（FAQ 使用）
             code: 'UBETQ9',                      // 邀请码
