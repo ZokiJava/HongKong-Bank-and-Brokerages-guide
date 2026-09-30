@@ -360,11 +360,19 @@
             opacity: 0.9;
         }
 
-        .theme-toggle {
+        /* 右上角按钮组：主题切换 + 悬浮窗开关 */
+        .top-actions {
             position: fixed;
             top: 18px;
             right: 18px;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-toggle,
+        .float-toggle {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -378,10 +386,18 @@
             cursor: pointer;
             transition: all 0.2s ease;
             box-shadow: 0 2px 8px var(--shadow);
+            white-space: nowrap;
         }
 
-        .theme-toggle:hover {
+        .theme-toggle:hover,
+        .float-toggle:hover {
             transform: translateY(-1px);
+        }
+
+        /* 悬浮窗开关：关闭状态淡化显示 */
+        .float-toggle.off {
+            opacity: 0.72;
+            color: var(--text-light);
         }
 
         .contact-section {
@@ -448,6 +464,15 @@
             flex-direction: column;
             align-items: flex-end;
             gap: 10px;
+            transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        }
+
+        /* 悬浮窗关闭状态：隐藏且不可点击 */
+        .floating-stack.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            pointer-events: none;
         }
 
         .floating-stack .floating-link {
@@ -506,6 +531,18 @@
             .contact-btn {
                 width: 100%;
                 max-width: 280px;
+            }
+
+            .top-actions {
+                top: 12px;
+                right: 12px;
+                gap: 6px;
+            }
+
+            .theme-toggle,
+            .float-toggle {
+                padding: 8px 12px;
+                font-size: 0.82em;
             }
 
             .floating-stack {
@@ -577,7 +614,10 @@
 
 <body>
     <div class="container">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑暗模式">🌙 深色模式</button>
+        <div class="top-actions">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑暗模式">🌙 深色模式</button>
+            <button class="float-toggle" id="floatToggle" type="button" aria-label="切换悬浮窗显示">👁 悬浮窗</button>
+        </div>
         <header id="siteHeader"></header>
 
         <!-- 平台介绍 / 联系方式等内容全部由 site-content.js 渲染，需改文字请编辑 site-content.js -->
@@ -606,6 +646,35 @@
             const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
             applyTheme(initialTheme);
         }
+
+        // 悬浮窗显示开关：默认开启，可关闭；状态保存在 localStorage
+        function initFloatingToggle() {
+            const stack = document.getElementById('floatingStack');
+            const btn = document.getElementById('floatToggle');
+            if (!stack || !btn) return;
+
+            const saved = localStorage.getItem('floatingEnabled');
+            // 未设置过时默认开启
+            const isEnabled = saved === null ? true : saved === '1';
+
+            function applyFloatingState(enabled) {
+                stack.classList.toggle('is-hidden', !enabled);
+                btn.innerHTML = enabled ? '👁 悬浮窗' : '🙈 悬浮窗';
+                btn.classList.toggle('off', !enabled);
+                btn.setAttribute('aria-label', enabled ? '关闭悬浮窗' : '开启悬浮窗');
+                localStorage.setItem('floatingEnabled', enabled ? '1' : '0');
+            }
+
+            btn.addEventListener('click', function () {
+                // 当前是隐藏状态则开启，否则关闭
+                applyFloatingState(stack.classList.contains('is-hidden'));
+            });
+
+            // site-content.js 已渲染悬浮窗，这里立即恢复开关状态，避免页面闪烁
+            applyFloatingState(isEnabled);
+        }
+
+        initFloatingToggle();
 
         // 按 UTC+8 (中国标准时间) 计算今天的日期并写入页面
         function updateUpdateDate() {
