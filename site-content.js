@@ -27,7 +27,7 @@
             logoAlt: '香港开户指南 - T1财经',
             logoTitle: 'T1财经 香港开户指南',
             heading: '香港开户指南|精选海外券商与香港数字银行开户福利',
-            subtitle: '汇集香港银行、数字银行与券商开户渠道、专属邀请码与开户返现奖励，附香港电话卡（hahaSIM / CSL）办理与激活教程。更新日期：',
+            subtitle: '汇集香港、澳门银行与数字银行及券商开户渠道、专属邀请码与开户返现奖励（含澳门蚂蚁银行薅800HKD攻略），附香港电话卡（hahaSIM / CSL）办理与激活教程。更新日期：',
             updateDate: '2026-09-16'   // 页面加载后会自动刷新为当天日期
         },
 
@@ -123,7 +123,7 @@
                             '持有1,000HKD总结余过夜：<span class="highlight">返 300 HKD</span>',
                             '持有10,000HKD股票过夜：<span class="highlight">额外返 200 HKD</span>',
                             '填邀请码可额外获 <span class="highlight">30刀 + 1000HKD</span> 奖励'
-                            
+
                         ]
                     }
                 ],
@@ -148,13 +148,49 @@
                     {
                         title: '🎁 开户福利：',
                         items: [
-                            '通过邀请码注册即可：<span class="highlight">返 150 HKD</span>',
+                            '通过邀请码注册即可：<span class="highlight">返 200 HKD</span>',
                             '开通股票交易：可使用港币 200×2 + 100×12 返现优惠卷'
                         ]
                     }
                 ],
                 inviteCode: 'M4HIX6'
                 // 平安数字银行通过 PAOB App 开户，无独立网页注册入口
+            },
+            {
+                name: '澳门蚂蚁银行 (Macau)',
+                borderColor: '#1677ff',
+                tags: [
+                    { text: '澳门数字银行 | 开户总薅 800HKD', background: '#e8f0fe', color: '#1a56db' },
+                    { text: '银行', background: '#ffebee', color: '#c62828' }
+                ],
+                sections: [
+                    {
+                        title: '✨ 核心优势：',
+                        items: [
+                            '澳门数字银行，来澳必开，门槛低',
+                            '支持港卡入金，可领阿里巴巴、小米股票奖励',
+                            '可以开通澳门版支付宝'
+                        ]
+                    },
+                    {
+                        title: '🎁 开户福利：',
+                        items: [
+                            '使用邀请码注册，开户后当月内首次入金 ≥ 3,000港币：<span class="highlight">可返 400 HKD</span>',
+                            '开户入金完成可领 <span class="highlight">90元现金券 + 2股阿里巴巴，入金持有30天再领 2股小米</span>',                           
+                        ]
+                    }
+                ],
+                inviteCode: 'LPBHNX8S',
+                register: {
+                    text: '立即注册开户→',
+                    url: 'https://render.alipay.com/p/c/180020570000149153/index.html?invite-code=LPBHNX8S&utm_source=antbank_app_share',
+                    background: '#1677ff'
+                },
+                download: {
+                    text: '开户指南',
+                    file: './澳门蚂蚁银行开户薅800HKD指南.md',
+                    fileName: '澳门蚂蚁银行开户薅800HKD指南.md'
+                }
             },
         ],
 
@@ -197,6 +233,24 @@
         ]
     };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* ================== 渲染逻辑（一般无需修改） ================== */
 
     function renderHeader() {
@@ -222,7 +276,19 @@
         var html = '';
         window.SITE_CONTENT.cards.forEach(function (card) {
             html += '<div class="card" style="border-top-color:' + card.borderColor + ';">';
+            html += '<div class="card-head">';
             html += '<h2>' + card.name + '</h2>';
+
+            if (card.download) {
+                html += '<a class="card-download-btn" onclick="forceDownload(\'' +
+                    card.download.file + '\', \'' + card.download.fileName + '\', this)">' +
+                    '<svg style="width:16px;height:16px;margin-right:5px;vertical-align:-2px;" viewBox="0 0 24 24">' +
+                    '<path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" /></svg>' +
+                    card.download.text +
+                    '</a>';
+            }
+
+            html += '</div>';
 
             if (card.tags && card.tags.length) {
                 html += '<div class="tags">';

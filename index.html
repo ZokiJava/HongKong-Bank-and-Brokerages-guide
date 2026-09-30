@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>香港开户指南 - 香港银行·数字银行·券商开户福利与邀请码 | T1财经</title>
-    <meta name="description" content="赴港香港开户指南：众安银行ZA Bank、平安数字银行、盈立证券新加坡、复星证券等香港数字银行与券商开户教程、邀请码及现金返现福利汇总（最高累计返1300+HKD），另有香港电话卡hahaSIM、CSL激活教程，全国包邮。">
-    <meta name="keywords" content="香港开户,香港银行开户,香港数字银行开户,香港券商开户,香港开户指南,香港电话卡,香港sim卡,众安银行,ZA Bank,平安数字银行,盈立证券,复星证券,hahaSIM,CSL储值卡,邀请码">
+    <meta name="description" content="赴港开户指南：众安银行ZA Bank、平安数字银行、盈立证券新加坡、复星证券等香港数字银行与券商开户教程、邀请码及现金返现福利汇总，澳门蚂蚁银行开户薅800HKD攻略（邀请码LPBHNX8S返400HKD），最高累计返1300+HKD；另有香港电话卡hahaSIM、CSL激活教程，全国包邮。">
+    <meta name="keywords" content="香港开户,香港银行开户,香港数字银行开户,香港券商开户,香港开户指南,香港电话卡,香港sim卡,众安银行,ZA Bank,平安数字银行,盈立证券,复星证券,澳门蚂蚁银行,蚂蚁银行澳门,澳门银行开户,澳门开户,邀请码,hahaSIM,CSL储值卡">
     <meta name="robots" content="index, follow">
     <meta name="author" content="T1财经">
     <link rel="canonical" href="https://t1.bbroot.com/">
@@ -83,7 +83,8 @@
             { "@type": "ListItem", "position": 3, "name": "众安银行ZA Bank香港开户", "url": "https://t1.bbroot.com/" },
             { "@type": "ListItem", "position": 4, "name": "平安数字银行开户", "url": "https://t1.bbroot.com/" },
             { "@type": "ListItem", "position": 5, "name": "香港电话卡hahaSIM激活教程", "url": "https://t1.bbroot.com/hahasim.html" },
-            { "@type": "ListItem", "position": 6, "name": "香港电话卡CSL储值卡激活教程", "url": "https://t1.bbroot.com/cslsim.html" }
+            { "@type": "ListItem", "position": 6, "name": "香港电话卡CSL储值卡激活教程", "url": "https://t1.bbroot.com/cslsim.html" },
+            { "@type": "ListItem", "position": 7, "name": "澳门蚂蚁银行开户", "url": "https://render.alipay.com/p/c/180020570000149153/index.html?invite-code=LPBHNX8S&utm_source=antbank_app_share" }
         ]
     }
     </script>
@@ -211,6 +212,48 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 12px;
             font-size: 1.4em;
+        }
+
+        /* 卡片标题行：标题与下载按钮同行展示 */
+        .card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card-head h2 {
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* 卡片内下载按钮（如 澳门蚂蚁银行 开户指南） */
+        .card-download-btn {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+            background: #1677ff;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.78em;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: 999px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .card-download-btn:hover {
+            background: #0f5fe0;
+            color: #ffffff;
+            transform: translateY(-1px);
         }
 
         .tag {
@@ -593,12 +636,16 @@
             setInterval(updateUpdateDate, 60 * 1000);
         });
 
-        // PDF 强制下载脚本
-        function forceDownload(url, fileName) {
-            const btn = document.querySelector('.download-btn');
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = '下载中...';
-            btn.style.pointerEvents = 'none';
+        // 强制下载脚本（PDF / MD 通用）
+        // url   - 文件相对路径
+        // fileName - 保存到本地的文件名
+        // btn   - 触发下载的按钮元素（可选；不传则使用页面顶部 .download-btn）
+        function forceDownload(url, fileName, btn) {
+            const target = btn || document.querySelector('.download-btn');
+            if (!target) return;
+            const originalHTML = target.innerHTML;
+            target.innerHTML = '下载中...';
+            target.style.pointerEvents = 'none';
 
             fetch(url)
                 .then(response => {
@@ -617,13 +664,13 @@
                     window.URL.revokeObjectURL(blobUrl);
                     document.body.removeChild(a);
 
-                    btn.innerHTML = originalHTML;
-                    btn.style.pointerEvents = 'auto';
+                    target.innerHTML = originalHTML;
+                    target.style.pointerEvents = 'auto';
                 })
                 .catch(error => {
                     window.open(url, '_blank');
-                    btn.innerHTML = originalHTML;
-                    btn.style.pointerEvents = 'auto';
+                    target.innerHTML = originalHTML;
+                    target.style.pointerEvents = 'auto';
                 });
         }
 
