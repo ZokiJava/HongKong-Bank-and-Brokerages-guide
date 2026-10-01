@@ -27,7 +27,7 @@
             logoAlt: '香港开户指南 - T1财经',
             logoTitle: 'T1财经 香港开户指南',
             heading: '香港开户指南|精选海外券商与香港数字银行开户福利',
-            subtitle: '汇集香港、澳门银行与数字银行及券商开户渠道、专属邀请码与开户返现奖励（含澳门蚂蚁银行薅800HKD攻略），附香港电话卡（hahaSIM / CSL）办理与激活教程。更新日期：',
+            subtitle: '汇集香港、澳门银行与数字银行及券商开户渠道、专属邀请码与开户返现奖励，附香港电话卡（hahaSIM / CSL）办理与激活教程。<span class="highlight">注意！入金前先检查邀请码！</span>更新日期：',
             updateDate: '2026-09-16'   // 页面加载后会自动刷新为当天日期
         },
 
@@ -39,159 +39,181 @@
         },
 
         /* ---------- 平台介绍卡片 ---------- */
-        cards: [
-            {
-                name: '盈立证券新加坡 (uSMART,SG)',
-                borderColor: '#ff7043',   // 卡片顶部线条颜色
-                tags: [
-                    { text: '大券商 | 港美日新英股', background: '#ffebee', color: '#c62828' },
-                    { text: '券商', background: '#ffebee', color: '#c62828' }
-                ],
-                sections: [
-                    {
-                        title: '✨ 核心优势：',
-                        items: [
-                            '大型券商，支持交易港、美、日、新、英等市场股票',
-                            '无 CSR 要求，使用香港汇丰可免费入金出金',
-                            '支持美股打新'
-                        ]
-                    },
-                    {
-                        title: '🎁 开户福利：',
-                        items: [
-                            '首次入金 ≥ 2000刀：<span class="highlight">可返 300 HKD</span>',
-                            '额外获取 0.02股$特斯拉及 36刀等奖励'
-                        ]
-                    }
-                ],
-                inviteCode: '960j',
-                register: {
-                    text: '立即注册开户→',
-                    url: 'https://m.usmartsg66.com/promo/overseas/bonus-dec.html?ICode=960j&langType=1&Id=',
-                    background: '#ff7043'
-                }
-            },
-            {
-                name: '复星证券（星财富）',
-                borderColor: '#c0ca33',
-                tags: [
-                    { text: '港股打新 | 优汇率', background: '#f9fbe7', color: '#827717' },
-                    { text: '券商', background: '#ffebee', color: '#c62828' }
-                ],
-                sections: [
-                    {
-                        title: '✨ 核心优势：',
-                        items: [
-                            '支持港股 IPO 免费打新',
-                            '换汇汇率极好，方便换成RMB出金'
-                        ]
-                    },
-                    {
-                        title: '🎁 开户福利：',
-                        items: [
-                            '首次入金 ≥ 10,000港币且维持三天：<span class="highlight">可返 300 HKD</span>',
-                            '完成入金<span class="highlight">可享受一世免佣与实时行情</span>',
-                            '返现福利无需交易，港卡出金免费'
-                        ]
-                    }
-                ],
-                inviteCode: 'UBETQ9',
-                register: {
-                    text: '立即注册开户→',
-                    url: 'https://h5.fotechwealth.com/pages/startAccount.html?channel=040003&aeCode=B2&invitationCode=UBETQ9&langType=zhCn',
-                    background: '#c0ca33'
-                }
-            },
-            {
-                name: '众安银行 (ZA Bank)',
-                borderColor: '#26a69a',
-                tags: [
-                    { text: '香港数字银行 | 必开推荐', background: '#e0f2f1', color: '#00695c' },
-                    { text: '银行', background: '#ffebee', color: '#c62828' }
-                ],
-                sections: [
-                    {
-                        title: '✨ 核心优势：',
-                        items: [
-                            '赴港必开的银行之一',
-                            '门槛极低，活动及奖励多'
-                        ]
-                    },
-                    {
-                        title: '🎁 开户福利：',
-                        items: [
-                            '持有1,000HKD总结余过夜：<span class="highlight">返 300 HKD</span>',
-                            '持有10,000HKD股票过夜：<span class="highlight">额外返 200 HKD</span>',
-                            '填邀请码可额外获 <span class="highlight">30刀 + 1000HKD</span> 奖励'
-
-                        ]
-                    }
-                ],
-                inviteCode: 'LN7258'
-                // 众安银行没有独立注册网页，直接下载 ZA Bank App 开户即可
-            },
-            {
-                name: '平安数字银行 (PAOB)',
-                borderColor: '#ffa726',
-                tags: [
-                    { text: '零门槛 | 高额券包', background: '#fff3e0', color: '#ef6c00' },
-                    { text: '银行', background: '#ffebee', color: '#c62828' }
-                ],
-                sections: [
-                    {
-                        title: '✨ 核心优势：',
-                        items: [
-                            '完全无门槛',
-                            '该银行一共能纯赚一千港币左右'
-                        ]
-                    },
-                    {
-                        title: '🎁 开户福利：',
-                        items: [
-                            '通过邀请码注册即可：<span class="highlight">返 200 HKD</span>',
-                            '开通股票交易：可使用港币 200×2 + 100×12 返现优惠卷'
-                        ]
-                    }
-                ],
-                inviteCode: 'M4HIX6'
-                // 平安数字银行通过 PAOB App 开户，无独立网页注册入口
-            },
-            {
-                name: '澳门蚂蚁银行 (Macau)',
-                borderColor: '#1677ff',
-                tags: [
-                    { text: '澳门数字银行 | 开户总薅 800HKD', background: '#e8f0fe', color: '#1a56db' },
-                    { text: '银行', background: '#ffebee', color: '#c62828' }
-                ],
-                sections: [
-                    {
-                        title: '✨ 核心优势：',
-                        items: [
-                            '澳门数字银行，来澳必开，门槛低',
-                            '支持港卡入金，可领阿里巴巴、小米股票奖励',
-                            '可以开通澳门版支付宝'
-                        ]
-                    },
-                    {
-                        title: '🎁 开户福利：',
-                        items: [
-                            '使用邀请码注册，开户后当月内首次入金 ≥ 3,000港币：<span class="highlight">可返 400 HKD</span>',
-                            '开户入金完成可领 <span class="highlight">90元现金券 + 2股阿里巴巴，入金持有30天再领 2股小米</span>',                           
-                        ]
-                    }
-                ],
-                inviteCode: 'LPBHNX8S',
-                register: {
-                    text: '立即注册开户→',
-                    url: 'https://render.alipay.com/p/c/180020570000149153/index.html?invite-code=LPBHNX8S&utm_source=antbank_app_share',
-                    background: '#1677ff'
+        cards: [{
+            name: '众安银行 (ZA Bank)',
+            borderColor: '#26a69a',
+            tags: [
+                { text: '香港数字银行 | 必开推荐', background: '#e0f2f1', color: '#00695c' },
+                { text: '银行', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '赴港必开的银行之一',
+                        '门槛极低，活动及奖励多'
+                    ]
                 },
-                download: {
-                    text: '开户指南',
-                    file: './澳门蚂蚁银行开户薅800HKD指南.md',
-                    fileName: '澳门蚂蚁银行开户薅800HKD指南.md'
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '持有1,000HKD总结余过夜：<span class="highlight">返 300 HKD</span>',
+                        '持有10,000HKD股票过夜：<span class="highlight">额外返 200 HKD</span>',
+                        '填邀请码可额外获 <span class="highlight">30刀 + 1000HKD</span> 奖励'
+
+                    ]
                 }
+            ],
+            inviteCode: 'LN7258',
+            download: {
+                text: '开户指南',
+                file: './众安银行开户填邀请码返 350HKD共赚 1400+HKD 活动持续至10月28日.md',
+                fileName: '众安银行开户填邀请码返 350HKD共赚 1400+HKD 活动持续至10月28日.md'
             },
+            register: {
+                text: '专属链接开户→',
+                url: 'https://l.za.group/GAV7o',
+                background: '#26a69a'
+            }
+
+            // 众安银行没有独立注册网页，直接下载 ZA Bank App 开户即可
+        },
+        {
+            name: '澳门蚂蚁银行 (Macau)',
+            borderColor: '#1677ff',
+            tags: [
+                { text: '澳门数字银行 | 必开推荐', background: '#e8f0fe', color: '#1a56db' },
+                { text: '银行', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '澳门数字银行，来澳必开，门槛低',
+                        '支持<span class="highlight">众安入金</span>，可领阿里巴巴、小米股票奖励',
+                        '可以开通澳门版支付宝'
+                    ]
+                },
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '使用邀请码注册，开户后当月内首次入金 ≥ 3,000港币：<span class="highlight">可返 400 HKD</span>',
+                        '开户入金完成可领 <span class="highlight">90元现金券 + 2股阿里巴巴，入金持有30天再领 2股小米</span>',
+                    ]
+                }
+            ],
+            inviteCode: 'LPBHNX8S',
+            register: {
+                text: '专属链接开户→',
+                url: 'https://render.alipay.com/p/c/180020570000149153/index.html?invite-code=LPBHNX8S&utm_source=antbank_app_share',
+                background: '#1677ff'
+            },
+            download: {
+                text: '开户指南',
+                file: './澳门蚂蚁银行开户薅800HKD指南.md',
+                fileName: '澳门蚂蚁银行开户薅800HKD指南.md'
+            }
+        },
+        {
+            name: '盈立证券新加坡',
+            borderColor: '#ff7043',   // 卡片顶部线条颜色
+            tags: [
+                { text: '大券商 | 港美日新英股', background: '#ffebee', color: '#c62828' },
+                { text: '券商', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '大型券商，支持交易港、美、日、新、英等市场股票',
+                        '无 CSR 要求，使用香港汇丰可免费入金出金',
+                        '支持美股打新'
+                    ]
+                },
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '首次入金 ≥ 2000刀：<span class="highlight">可返 300 HKD</span>',
+                        '免费领取 0.02股$特斯拉及36刀券包等奖励'
+                    ]
+                }
+            ],
+            inviteCode: '960j',
+            register: {
+                text: '专属链接开户→',
+                url: 'https://m.usmartsg66.com/promo/overseas/bonus.html?ICode=960j&langType=1&Id=',
+                background: '#ff7043'
+            },
+            download: {
+                text: '开户指南',
+                file: './盈立证券开户返300HKD.md',
+                fileName: '盈立证券开户返300HKD.md'
+            }
+        },
+        {
+            name: '复星证券（星财富）',
+            borderColor: '#c0ca33',
+            tags: [
+                { text: '港股打新 | 优汇率', background: '#f9fbe7', color: '#827717' },
+                { text: '券商', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '支持港股 IPO 免费打新',
+                        '换汇汇率极好，方便换成RMB出金'
+                    ]
+                },
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '首次入金 ≥ 10,000港币且维持三天：<span class="highlight">可返 300 HKD</span>',
+                        '完成入金<span class="highlight">可享受一世免佣与实时行情</span>',
+                        '返现福利无需交易，港卡出金免费'
+                    ]
+                }
+            ],
+            inviteCode: 'UBETQ9',
+            register: {
+                text: '专属链接开户→',
+                url: 'https://h5.fotechwealth.com/pages/startAccount.html?channel=040003&aeCode=B2&invitationCode=UBETQ9&langType=zhCn',
+                background: '#c0ca33'
+            },
+            download: {
+                text: '开户指南',
+                file: './内地可开复星证券开户返350HKD.md',
+                fileName: '内地可开复星证券开户返350HKD.md'
+            }
+        },
+
+        {
+            name: '平安数字银行 (PAOB)',
+            borderColor: '#ffa726',
+            tags: [
+                { text: '零门槛 | 高额券包', background: '#fff3e0', color: '#ef6c00' },
+                { text: '银行', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '完全无门槛',
+                        '该银行一共能纯赚一千港币左右'
+                    ]
+                },
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '通过邀请码注册即可：<span class="highlight">返 200 HKD</span>',
+                        '开通股票交易：可使用港币 200×2 + 100×12 返现优惠卷'
+                    ]
+                }
+            ],
+            inviteCode: 'M4HIX6'
+            // 平安数字银行通过 PAOB App 开户，无独立网页注册入口
+        },
+
         ],
 
         /* ---------- 底部联系方式 ---------- */
