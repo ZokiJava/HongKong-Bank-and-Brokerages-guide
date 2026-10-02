@@ -168,7 +168,7 @@
                 {
                     title: '🎁 开户福利：',
                     items: [
-                        '首次入金 ≥ 10,000港币且维持三天：<span class="highlight">可返 300 HKD</span>',
+                        '首次入金 ≥ 10,000港币且维持三十天：<span class="highlight">可返 300 HKD</span>',
                         '完成入金<span class="highlight">可享受一世免佣与实时行情</span>',
                         '返现福利无需交易，港卡出金免费'
                     ]
