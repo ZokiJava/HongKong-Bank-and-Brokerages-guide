@@ -151,6 +151,42 @@
             }
         },
         {
+            name: '腾达证券 (GigaMoney)',
+            borderColor: '#ffa600',
+            tags: [
+                { text: '十月限时活动！ | 内地IP可开', background: '#f3e5f5', color: '#6a1b9a' },
+                { text: '券商', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '香港证监会（SFC）持牌机构',                        
+                        '无需赴港，<span class="highlight">内地 IP 环境可直接开户、入金、交易</span>',
+                        
+                    ]
+                },
+                {
+                    title: '🎁 开户福利（总计最高 960 HKD）：',
+                    items: [                                       
+                        '首次入金 ≥ 1万HKD 并留存对应天数：<span class="highlight">返 600 HKD</span>',
+                        '首次入金 ≥ 2万HKD 并留存对应天数：<span class="highlight">返 320 HKD</span>',
+                    ]
+                }
+            ],
+            inviteCode: 'XD7NRTBL',
+            register: {
+                text: '专属链接开户→',
+                url: 'https://gigamoney.app.wbrks.com/session/login?app_id=winner&org_id=1&account_channel=hk_winner&channel=kol&invite-code=XD7NRTBL',
+                background: '#8e24aa'
+            },
+            download: {
+                text: '开户指南',
+                file: './内地IP可开！腾达证券10月活动开户返600HKD总计960HKD.md',
+                fileName: '内地IP可开！腾达证券10月活动开户返600HKD总计960HKD.md'
+            }
+        },
+        {
             name: '复星证券（星财富）',
             borderColor: '#c0ca33',
             tags: [
@@ -189,7 +225,7 @@
 
         {
             name: '平安数字银行 (PAOB)',
-            borderColor: '#ffa726',
+            borderColor: '#ff0000',
             tags: [
                 { text: '零门槛 | 高额券包', background: '#fff3e0', color: '#ef6c00' },
                 { text: '银行', background: '#ffebee', color: '#c62828' }
@@ -213,6 +249,7 @@
             inviteCode: 'M4HIX6'
             // 平安数字银行通过 PAOB App 开户，无独立网页注册入口
         },
+        
 
         ],
 
