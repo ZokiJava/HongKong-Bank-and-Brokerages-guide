@@ -34,8 +34,8 @@
         /* ---------- 下载按钮 ---------- */
         download: {
             text: '下载指南文档 (PDF)',
-            file: './盈立复星众安蚂蚁平安开户指南.pdf',
-            fileName: '盈立复星众安蚂蚁平安开户指南.pdf'
+            file: './11月盈立复星众安蚂蚁平安腾达开户指南.pdf',
+            fileName: '11月盈立复星众安蚂蚁平安腾达开户指南.pdf'
         },
 
         /* ---------- 平台介绍卡片 ---------- */
@@ -133,7 +133,7 @@
                 {
                     title: '🎁 开户福利：',
                     items: [
-                        '首次入金 ≥ 2000刀：<span class="highlight">可返 300 HKD</span>',
+                        '首次入金 ≥ 2000刀：<span class="highlight">可返 300 RMB</span>',
                         '免费领取 0.02股$特斯拉及36刀券包等奖励'
                     ]
                 }
@@ -204,7 +204,7 @@
                 {
                     title: '🎁 开户福利：',
                     items: [
-                        '首次入金 ≥ 10,000港币且维持三十天：<span class="highlight">可返 300 HKD</span>',
+                        '首次入金 ≥ 10,000港币且维持三十天：<span class="highlight">可返 350 HKD</span>',
                         '完成入金<span class="highlight">可享受一世免佣与实时行情</span>',
                         '返现福利无需交易，港卡出金免费'
                     ]
@@ -234,20 +234,25 @@
                 {
                     title: '✨ 核心优势：',
                     items: [
-                        '完全无门槛',
-                        '该银行一共能纯赚一千港币左右'
+                        '<span class="highlight">完全0门槛</span>'
+                        ,'注册即送'
                     ]
                 },
                 {
                     title: '🎁 开户福利：',
                     items: [
-                        '通过邀请码注册即可：<span class="highlight">返 200 HKD</span>',
-                        '开通股票交易：可使用港币 200×2 + 100×12 返现优惠卷'
+                        '通过邀请码注册即可：<span class="highlight">返 250 HKD</span>',
+                        '入金两万港币额外返200HKD',
+                        '可以领年化20%定存卷'
                     ]
                 }
             ],
-            inviteCode: 'M4HIX6'
-            // 平安数字银行通过 PAOB App 开户，无独立网页注册入口
+            inviteCode: 'M4HIX6',
+            register: {
+                text: '专属链接开户➡️',
+                url: 'https://mobilebanking.pingandb.com/h5/mgm.html#/mgeBeRecommenderNew?referralCode=M4HIX6&activityCode=A202610280001',
+                background: '#ff0000'
+            }
         },
         
 
