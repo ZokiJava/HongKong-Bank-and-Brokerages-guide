@@ -57,7 +57,7 @@
                 {
                     title: '🎁 开户福利：',
                     items: [
-                        '持有1,000HKD总结余过夜：<span class="highlight">返 300 HKD</span>',
+                        '持有1,000HKD总结余过夜：<span class="highlight">返 350 HKD</span>',
                         '持有10,000HKD股票过夜：<span class="highlight">额外返 200 HKD</span>',
                         '填邀请码可额外获 <span class="highlight">30刀 + 1000HKD</span> 奖励'
 
@@ -115,6 +115,73 @@
             }
         },
         {
+            name: '平安数字银行 (PAOB)',
+            borderColor: '#ff0000',
+            tags: [
+                { text: '零门槛 | 高额券包', background: '#fff3e0', color: '#ef6c00' },
+                { text: '银行', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '<span class="highlight">完全0门槛</span>'
+                        , '注册即送'
+                    ]
+                },
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '通过邀请码注册即可：<span class="highlight">返 250 HKD</span>',
+                        '入金两万港币额外返200HKD',
+                        '可以领年化20%定存卷'
+                    ]
+                }
+            ],
+            inviteCode: 'M4HIX6',
+            register: {
+                text: '专属链接开户➡️',
+                url: 'https://mobilebanking.pingandb.com/h5/mgm.html#/mgeBeRecommenderNew?referralCode=M4HIX6&activityCode=A202610280001',
+                background: '#ff0000'
+            }
+        },
+        {
+            name: '盈立证券香港',
+            borderColor: '#dbf420',   // 卡片顶部线条颜色
+            tags: [
+                { text: '大券商 | 港美股IPO', background: '#ffebee', color: '#c62828' },
+                { text: '券商', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '大型券商，支持免费港美股IPO',
+
+                        '平台费较低'
+                    ]
+                },
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '首次入金 ≥ 10000HKD：<span class="highlight">可返 300HKD</span>',
+                        '<span class="highlight">平台额外返300HKD+30U</span>'
+                    ]
+                }
+            ],
+            inviteCode: 'vf5xv',
+            register: {
+                text: '专属链接开户→',
+                url: 'https://hk.usmartbroker.com/u/1-0200A0xa2w',
+                background: '#ff7043'
+            },
+            download: {
+                text: '开户指南',
+                file: './盈立证券开户返300HKD.md',
+                fileName: '盈立证券开户返300HKD.md'
+            }
+        },
+        {
             name: '盈立证券新加坡',
             borderColor: '#ff7043',   // 卡片顶部线条颜色
             tags: [
@@ -133,7 +200,7 @@
                 {
                     title: '🎁 开户福利：',
                     items: [
-                        '首次入金 ≥ 2000刀：<span class="highlight">可返 300 RMB</span>',
+                        '首次入金 ≥ 16000HKD：<span class="highlight">可返 300 RMB</span>',
                         '免费领取 0.02股$特斯拉及36刀券包等奖励'
                     ]
                 }
@@ -150,6 +217,7 @@
                 fileName: '盈立证券开户返300HKD.md'
             }
         },
+        
         {
             name: '腾达证券 (GigaMoney)',
             borderColor: '#ffa600',
@@ -161,14 +229,14 @@
                 {
                     title: '✨ 核心优势：',
                     items: [
-                        '香港证监会（SFC）持牌机构',                        
+                        '香港证监会（SFC）持牌机构',
                         '无需赴港，<span class="highlight">内地 IP 环境可直接开户、入金、交易</span>',
-                        
+
                     ]
                 },
                 {
                     title: '🎁 开户福利（总计最高 960 HKD）：',
-                    items: [                                       
+                    items: [
                         '首次入金 ≥ 1万HKD 并留存对应天数：<span class="highlight">返 600 HKD</span>',
                         '首次入金 ≥ 2万HKD 并留存对应天数：<span class="highlight">返 320 HKD</span>',
                     ]
@@ -182,8 +250,8 @@
             },
             download: {
                 text: '开户指南',
-                file: './内地IP可开！腾达证券10月活动开户返600HKD总计960HKD.md',
-                fileName: '内地IP可开！腾达证券10月活动开户返600HKD总计960HKD.md'
+                file: './腾达证券指南.md',
+                fileName: '腾达证券指南.md'
             }
         },
         {
@@ -204,7 +272,7 @@
                 {
                     title: '🎁 开户福利：',
                     items: [
-                        '首次入金 ≥ 10,000港币且维持三十天：<span class="highlight">可返 350 HKD</span>',
+                        '首次入金 ≥ 10,000港币且维持三十天：<span class="highlight">可返 400 HKD</span>',
                         '完成入金<span class="highlight">可享受一世免佣与实时行情</span>',
                         '返现福利无需交易，港卡出金免费'
                     ]
@@ -221,40 +289,10 @@
                 file: './内地可开复星证券开户返350HKD.md',
                 fileName: '内地可开复星证券开户返350HKD.md'
             }
-        },
+        }
 
-        {
-            name: '平安数字银行 (PAOB)',
-            borderColor: '#ff0000',
-            tags: [
-                { text: '零门槛 | 高额券包', background: '#fff3e0', color: '#ef6c00' },
-                { text: '银行', background: '#ffebee', color: '#c62828' }
-            ],
-            sections: [
-                {
-                    title: '✨ 核心优势：',
-                    items: [
-                        '<span class="highlight">完全0门槛</span>'
-                        ,'注册即送'
-                    ]
-                },
-                {
-                    title: '🎁 开户福利：',
-                    items: [
-                        '通过邀请码注册即可：<span class="highlight">返 250 HKD</span>',
-                        '入金两万港币额外返200HKD',
-                        '可以领年化20%定存卷'
-                    ]
-                }
-            ],
-            inviteCode: 'M4HIX6',
-            register: {
-                text: '专属链接开户➡️',
-                url: 'https://mobilebanking.pingandb.com/h5/mgm.html#/mgeBeRecommenderNew?referralCode=M4HIX6&activityCode=A202610280001',
-                background: '#ff0000'
-            }
-        },
-        
+
+
 
         ],
 
