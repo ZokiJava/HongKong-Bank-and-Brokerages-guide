@@ -183,6 +183,116 @@
             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
         }
 
+        /* 下载指南文档旁的「11月返利详情」图片按钮 */
+        .image-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e67e22;
+            color: #ffffff;
+            border: none;
+            margin-left: 12px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.95em;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.2);
+        }
+
+        .image-btn:hover {
+            background: #cf6d17;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        /* 返利详情大图弹窗 */
+        .rebate-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1500;
+            background: rgba(0, 0, 0, 0.75);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+            cursor: zoom-out;
+        }
+
+        .rebate-overlay.show {
+            display: flex;
+        }
+
+        .rebate-modal {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .rebate-modal img {
+            display: block;
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            cursor: auto;
+        }
+
+        .rebate-close {
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 50%;
+            background: #e74c3c;
+            color: #ffffff;
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .rebate-close:hover {
+            background: #c0392b;
+        }
+        /* 弹窗内的下载图片按钮 */
+        .rebate-download {
+            display: block;
+            width: fit-content;
+            margin: 16px auto 0;
+            padding: 10px 24px;
+            background: #1677ff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .rebate-download:hover {
+            background: #0f5fe0;
+            transform: translateY(-1px);
+        }
+
+
+
+        @media (max-width: 600px) {
+            .image-btn {
+                margin-left: 8px;
+                padding: 8px 16px;
+            }
+        }
+
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -627,6 +737,16 @@
 
     <div class="floating-stack" id="floatingStack"></div>
 
+    <!-- 11月返利详情 大图弹窗 -->
+    <div class="rebate-overlay" id="rebateOverlay" aria-hidden="true">
+        <div class="rebate-modal">
+            <img src="./assets/11月返利详情横版.jpg" alt="本月活动一图流" />
+            <a class="rebate-download" onclick="forceDownload('./assets/11月返利详情横版.jpg', '11月返利详情横版.jpg', this)">⬇ 下载图片</a>
+
+            <button type="button" class="rebate-close" onclick="hideRebateImage()" aria-label="关闭">&times;</button>
+        </div>
+    </div>
+
     <!-- 脚本区 -->
     <script src="site-content.js"></script>
     <script>
@@ -819,6 +939,40 @@
                 span.innerHTML = originalText;
             }, 1200);
         }
+        // 在「下载指南文档」按钮旁注入「11月返利详情」图片按钮；点击显示大图
+        function initRebateImageButton() {
+            var target = document.querySelector('.download-btn');
+            if (!target || document.querySelector('.image-btn')) return;
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'image-btn';
+            btn.textContent = '🏞️本月活动一图流';
+            btn.setAttribute('aria-label', '查看本月活动一图流');
+            btn.addEventListener('click', showRebateImage);
+            target.insertAdjacentElement('afterend', btn);
+        }
+
+        function showRebateImage() {
+            var overlay = document.getElementById('rebateOverlay');
+            if (overlay) overlay.classList.add('show');
+        }
+
+        function hideRebateImage() {
+            var overlay = document.getElementById('rebateOverlay');
+            if (overlay) overlay.classList.remove('show');
+        }
+
+        // 点击遮罩背景（图片以外区域）关闭弹窗
+        document.addEventListener('click', function (e) {
+            var overlay = document.getElementById('rebateOverlay');
+            if (overlay && e.target === overlay) {
+                hideRebateImage();
+            }
+        });
+
+        // 等 header（含下载按钮）渲染完成后注入图片按钮
+        document.addEventListener('DOMContentLoaded', initRebateImageButton);
+
     </script>
 </body>
 

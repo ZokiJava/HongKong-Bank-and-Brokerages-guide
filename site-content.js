@@ -281,7 +281,7 @@
             inviteCode: 'UBETQ9',
             register: {
                 text: '专属链接开户→',
-                url: 'https://h5.fotechwealth.com/pages/startAccount.html?channel=040003&aeCode=B2&invitationCode=UBETQ9&langType=zhCn',
+                url: 'https://h5.fotechwealth.com/pages/startAccount.html?channel=030006&aeCode=B2&invitationCode=UBETQ9&langType=zhCn',
                 background: '#c0ca33'
             },
             download: {
