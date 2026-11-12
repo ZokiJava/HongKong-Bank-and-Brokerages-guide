@@ -27,7 +27,7 @@
             logoAlt: '香港开户指南 - T1财经',
             logoTitle: 'T1财经 香港开户指南',
             heading: '香港开户指南|精选海外券商与香港数字银行开户福利',
-            subtitle: '汇集香港、澳门银行与数字银行及券商开户渠道、专属邀请码与开户返现奖励，附香港电话卡（hahaSIM / CSL）办理与激活教程。<span class="highlight">注意！入金前先检查邀请码！</span>更新日期：',
+            subtitle: '汇集香港、澳门银行与数字银行及券商开户渠道、专属邀请码与开户返现奖励办理与激活教程。<span class="highlight">注意！入金前先检查邀请码！</span>更新日期：',
             updateDate: '2026-09-16'   // 页面加载后会自动刷新为当天日期
         },
 
@@ -299,7 +299,7 @@
         /* ---------- 底部联系方式 ---------- */
         contact: {
             title: '📞 更多服务与业务咨询',
-            description: '如需办理 <strong>香港电话卡（CSL / hahasim）</strong> 或有任何开户疑问，欢迎通过下方方式联系我：',
+            description: '如有任何开户活动疑问，欢迎通过下方方式联系我：',
             wechatId: 'KirinChew',
             buttons: [
                 {

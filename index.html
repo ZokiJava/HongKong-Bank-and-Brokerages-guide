@@ -726,7 +726,9 @@
     <div class="container">
         <div class="top-actions">
             <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑暗模式">🌙 深色模式</button>
+           
             <button class="float-toggle" id="floatToggle" type="button" aria-label="切换悬浮窗显示">👁 悬浮窗</button>
+           
         </div>
         <header id="siteHeader"></header>
 
@@ -774,8 +776,8 @@
             if (!stack || !btn) return;
 
             const saved = localStorage.getItem('floatingEnabled');
-            // 未设置过时默认开启
-            const isEnabled = saved === null ? true : saved === '1';
+            // 未设置过时默认关闭
+            const isEnabled = saved === null ? false : saved === '1';
 
             function applyFloatingState(enabled) {
                 stack.classList.toggle('is-hidden', !enabled);
