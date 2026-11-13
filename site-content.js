@@ -289,6 +289,43 @@
                 file: './内地可开复星证券开户返350HKD.md',
                 fileName: '内地可开复星证券开户返350HKD.md'
             }
+        },
+        {
+            name: 'FSM丰盈全球(香港)',
+            borderColor: '#be3c25',
+            tags: [
+                { text: '港股0手续费', background: '#f9fbe7', color: '#827717' },
+                { text: '券商', background: '#ffebee', color: '#c62828' }
+            ],
+            sections: [
+                {
+                    title: '✨ 核心优势：',
+                    items: [
+                        '<span class="highlight">港股交易0平台费0手续费</span>',
+                        '换汇汇率较好，方便换成USD'
+                    ]
+                },
+                {
+                    title: '🎁 开户福利：',
+                    items: [
+                        '1个月基金免认购费',
+                        '2个月美股免佣',
+                        '3个月国债免认购费',
+                        
+                    ]
+                }
+            ],
+            inviteCode: 'BOBPNQ',
+            register: {
+                text: '专属链接开户→',
+                url: 'https://www.fsmglobal.hk/account-opening',
+                background: '#e04432'
+            },
+            download: {
+                text: '开户指南',
+                file: './内地可开复星证券开户返350HKD.md',
+                fileName: '内地可开复星证券开户返350HKD.md'
+            }
         }
 
 
